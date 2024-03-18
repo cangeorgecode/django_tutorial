@@ -28,4 +28,16 @@ def login_user(request):
 ```
 3. Create a login.html template
 4. If there's a homepage, make sure to change the href to the login in the homepage
+5. To logout, in views.py, add
+```
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'See ya!')
+    return redirect('home') # Make sure the redirect path exists
+```
+6. In app/urls.py, add
+```
+ path('logout/', views.logout_user, name='logout_user'),
+```
+7. No need to add a logout HTML template
 
