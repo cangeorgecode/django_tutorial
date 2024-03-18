@@ -27,4 +27,5 @@ def login_user(request):
         return render(request, 'core/login.html', {})
 ```
 3. Create a login.html template
+4. If there's a homepage, make sure to change the href to the login in the homepage
 
