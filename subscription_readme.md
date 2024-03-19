@@ -37,4 +37,34 @@ python manage.py migrate
 python manage.py djstripe_sync_models price
 ```
 
+In views.py, add
+```
+# Stripe subscription
+from djstripe.models import Product
+
+def index(request):
+    return render(request, 'core/index.html', {'products': Product.objects.all()})
+```
+
 Add pricing table (Stripe > Product catalog > Pricing tables) to HTML template where you want it displayed
+
+If you wish to view the djstripe model, run:
+```
+python3 manage.py shell
+>>> from djstripe.models import Product
+>>> products = Product.objects.all()
+>>> product = Product.objects.get(id=1)
+>>> print(product.__dict__) // This will show all the attributes
+```
+
+
+
+
+
+
+
+
+
+
+
+
