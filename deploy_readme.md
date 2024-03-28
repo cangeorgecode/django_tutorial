@@ -1,5 +1,9 @@
 Deploying our app to Heroku
 
+git init inside project directory
+Procfile and requirements.txt inside project directory
+If there is an existing ssh-key, then don't need to create another one
+
 Check that heroku is installed:
 ```
 heroku --version
@@ -28,8 +32,6 @@ In settings.py
 import django_heroku
 import dj_database_url
 from decouple import config
-
-# For static files
 import os
 
 MIDDLEWARE = [
@@ -40,7 +42,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'static'),
 ]
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
