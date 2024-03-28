@@ -9,7 +9,7 @@ If it's not installed, follow this: https://devcenter.heroku.com/articles/heroku
 Install the followings:
 ```
 pip install --no-dependencies django-heroku
-pip install gunicorn dj_database_url python-decouple psycopg2-binary
+pip install gunicorn dj_database_url python-decouple psycopg2-binary whitenoise
 ```
 
 Create Procfile in the project directory and add the following line:
