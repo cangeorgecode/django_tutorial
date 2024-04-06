@@ -22,10 +22,12 @@ web: gunicorn <name_of_app>.wsgi # from django-admin startproject command
 ```
 If you're uncertain of the project name, look at the wsgi.py file ('project_name.settings')
 
-Back to the terminal
+Back to the terminal and create the requirements.txt 
 ```
 pip freeze > requirements.txt
 ```
+
+Note that requirements.txt, Procfile and .git should be in the same directory as manage.py
 
 In settings.py
 ```
